@@ -4,7 +4,9 @@ require_once('DBClass.php');
 class Siswa extends DBClass{
 	
 	public function getSiswa(){
-		$str = "select nis,full_name,email from siswa order by full_name";		
+		$str = "select s.nis, s.full_name, s.email, n.code, n.nationality from siswa s
+			join nationality n On s.id_nationality = n.id_nationality
+			order by s.full_name";
 		$r = $this->getRows($str);
 		$this->close();
 		
