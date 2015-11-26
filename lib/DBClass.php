@@ -27,7 +27,7 @@
 		function __construct()
 		{
 			$this->db = false;
-			$this->dbname = 'pwl';
+			$this->dbname = 'perpustakaan';
 			$this->host   = 'localhost';
 			$this->user   = 'root';
 			$this->password = '';
@@ -76,7 +76,7 @@
 			$this->rowColl = mysql_query($sql) or die("Error : ".mysql_error());
 			$rows  = array();
 			
-			if( count($this->rowCol) > 1) mysql_data_seek($this->rowColl,0);
+			if( count($this->rowColl) > 1) mysql_data_seek($this->rowColl,0);
 			
 			while ($row = mysql_fetch_array($this->rowColl, MYSQL_ASSOC))
 				$rows[] = $row;
